@@ -1,4 +1,3 @@
-/* === RESET === */
 * {
   margin: 0;
   padding: 0;
@@ -6,38 +5,35 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* === BODY STYLING === */
 body {
   margin: 0;
   padding: 0;
   height: 100vh;
   display: flex;
-  justify-content: center;  /* horizontally center */
-  align-items: center;      /* vertically center */
+  justify-content: center;  
+  align-items: center;      
   background-color: lightsalmon;
 }
 
-/* === COMMON CONTAINER === */
 #container {
   background-color: tomato;
   padding: 25px 35px;
   border-radius: 15px;
   box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
   text-align: center;
-  width: 500px;       /* box ki width */
+  width: 500px;       
   max-width: 95%;
   border: 2px solid rgba(0, 0, 0, 0.1); 
   box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.25);
 }
 
 
-/* === ANIMATIONS === */
+
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-12px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* === HEADINGS === */
 h1 {
   margin-bottom: 20px;
   color: #333;
@@ -60,7 +56,7 @@ h3 {
   animation: fadeIn 0.8s ease-in-out;
 }
 
-/* === INPUT FIELDS === */
+
 input[type="text"],
 input[type="email"],
 input[type="password"] {
@@ -81,7 +77,6 @@ input:focus {
   box-shadow: 0 0 8px rgba(255, 140, 0, 0.4);
 }
 
-/* === BUTTONS === */
 input[type="submit"],
 button {
   width: 100px;
@@ -104,7 +99,6 @@ button:hover {
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
 }
 
-/* === LINKS === */
 a {
   display: inline-block;
   margin-top: 15px;
@@ -119,7 +113,6 @@ a:hover {
   text-decoration: underline;
 }
 
-/* === LOGIN/SIGNUP MESSAGES === */
 #message,
 #loginMessage {
   margin-top: 10px;
@@ -131,7 +124,6 @@ a:hover {
 #message { color: #28a745; }
 #loginMessage { color: #dc3545; }
 
-/* === QUIZ SECTION === */
 .header {
   display: flex;
   justify-content: space-between;
@@ -149,13 +141,13 @@ a:hover {
   border-radius: 8px;
   border-left: 6px solid #dc2626;
   margin-top: 15px;
-  width: 100%;           /* take full width */
-  white-space: nowrap;   /* keep in one line */
+  width: 100%;           
+  white-space: normal;  
+  word-wrap: break-word; 
   overflow: hidden;
-  text-overflow: ellipsis; /* if text too long */
+  text-overflow: ellipsis; 
 }
 
-/* === QUIZ OPTIONS === */
 #quizOption {
   list-style-type: none;
   padding: 0;
@@ -188,7 +180,6 @@ a:hover {
   color: black;
 }
 
-/* === SCORE === */
 #score {
   margin-top: 15px;
   font-size: 16px;
@@ -200,7 +191,6 @@ a:hover {
   display: inline-block;
 }
 
-/* === FINAL RESULTS === */
 #container h3[style*="green"] {
   background-color: #e6ffed;
   border: 2px solid #38a169;
