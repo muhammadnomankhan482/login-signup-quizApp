@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login + Quiz App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="container">
+        <!-- Login Section -->
+        <div id="loginContainer">
+            <h1>Quiz App</h1>
+            <h1>Log In</h1>
+            <form onsubmit="login(event)">
+                <input type="email" placeholder="Enter your Email" required id="loginEmail"><br><br>
+                <input type="password" placeholder="Enter your Password" required id="loginPassword"><br><br>
+                <input type="submit" value="Log In" id="logIn">
+                <p id="loginMessage"></p>
+            </form>
+            <a href="" onclick="showSignup(event)">Don't have an account? Sign Up</a>
+        </div>
+
+        <!-- Signup Section -->
+        <div id="signupContainer" style="display: none;">
+            <h1>Quiz App</h1>
+            <h1>Sign Up</h1>
+            <form onsubmit="details(event)">
+                <input type="text" placeholder="Enter your First Name" required id="firstName"><br><br>
+                <input type="text" placeholder="Enter your Last Name" required id="lastName"><br><br>
+                <input type="email" placeholder="Enter your Email" required id="email"><br><br>
+                <input type="password" placeholder="Enter your Password" required id="password"><br><br>
+                <input type="submit" value="Sign Up" id="submit">
+            </form>
+            <p id="message"></p>
+            <a href="" onclick="showLogin(event)">Already have an account? Log In</a>
+        </div>
+
+        <!-- Quiz Section -->
+        <div id="quizContainer" style="display:none;">
+            <div class="header">
+                <p id="question"></p>
+                <button onclick="goToNext()" id="next" disabled>Next</button>
+            </div>
+            <ul id="quizOption"></ul>
+            <div id="final"></div>
+            <div id="score"></div>
+            <button onclick="logout()" id="logoutBtn">Logout</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
