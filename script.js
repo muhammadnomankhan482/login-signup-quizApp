@@ -8,7 +8,6 @@ class User {
     }
 }
 
-var users = JSON.parse(localStorage.getItem("user")) || [];
 
 function showSignup(event) {
     event.preventDefault();
@@ -36,12 +35,16 @@ function details(event) {
         return;
     }
 
-    var user = new User(firstName, lastName, email, password);
-    users.push(user);
-    localStorage.setItem("user", JSON.stringify(users));
+    var users = JSON.parse(localStorage.getItem("user")) || [];
 
-    message.innerText = "Sign Up successful! Please login.";
-    message.style.color = "green";
+    let result = users.find((element) => element.email == email)
+    if (result?.email) {
+        alert("user already exist")
+    } else {
+        let user = new User(firstName, lastName, email, password)
+        users.push(user)
+        localStorage.setItem("user", JSON.stringify(users))
+    }
 
     document.getElementById("signupContainer").style.display = "none";
     document.getElementById("loginContainer").style.display = "block";
@@ -54,20 +57,15 @@ function login(event) {
     var loginMessage = document.getElementById("loginMessage");
 
     var users = JSON.parse(localStorage.getItem("user")) || [];
-    let isUserFound = false;
+    let loggedInUser = users.find((element) => element.email === loginEmail && element.password === loginPassword);
 
-    for (var i = 0; i < users.length; i++) {
-        if (loginEmail === users[i].email && loginPassword === users[i].password) {
-            isUserFound = true;
-            startQuiz();
-            break;
-        }
-    }
-
-    if (!isUserFound) {
+    if (loggedInUser) {
+        startQuiz();
+    } else {
         loginMessage.innerHTML = "Invalid email or password! Please try again.";
         loginMessage.style.color = "red";
     }
+
 }
 
 function logout() {
