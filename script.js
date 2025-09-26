@@ -1,4 +1,3 @@
-// === Signup / Login Logic ===
 class User {
     constructor(firstName, lastName, email, password) {
         this.firstName = firstName;
