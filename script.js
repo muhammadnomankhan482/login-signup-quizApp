@@ -263,7 +263,6 @@ function restartQuiz() {
     quizNumber = document.getElementById("score");
     quizOptions = document.getElementById("quizOption");
     nextQuestionButton = document.getElementById("next");
-    var logOutBtn = document.getElementById("logoutBtn");
     renderQuestions();
 }
 
